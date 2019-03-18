@@ -1,0 +1,56 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+
+using namespace std;
+
+int c[8];
+vector<int> ve[8];
+
+
+
+void bfs(int start){
+	
+	queue<int> qu;
+	qu.push(start);//queue using start
+	c[start]=true;
+	
+	
+	while(!qu.empty()){
+		int x =qu.front();
+		cout<<x<<' ';
+		qu.pop();
+		
+		for(int i=0;i<ve[x].size();i++){
+			int y = ve[x][i];
+			
+			if(!c[y]){
+				qu.push(y);
+				c[y]=true;
+			}
+		}
+		
+		
+	}
+}
+
+int main (void){
+	ve[1].push_back(2);
+	ve[1].push_back(3);
+	
+	ve[2].push_back(1);
+	ve[2].push_back(4);
+	ve[2].push_back(5);
+	
+	ve[3].push_back(6);
+	ve[3].push_back(7);
+	
+	ve[4].push_back(2);
+	ve[5].push_back(2);
+	
+	ve[6].push_back(3);
+	ve[7].push_back(7);
+	
+	bfs(1);
+}
