@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void LinearSearch(int a[], int want, int size){
+	
+	int i=0;
+	for(i=0;i<size;i++){
+		if(a[i]==want){
+			printf("%d.",i+1);
+			break;
+		}
+	}
+	
+}
+
+int main(void){
+	int array[7]={1,5,7,8,9,4,6};
+	LinearSearch(array,7,7);
+	return 0;
+}
