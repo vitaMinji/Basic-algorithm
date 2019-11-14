@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+    int tc, n;
+    cin>>tc;
+    
+    for(int i=0; i<tc; i++){
+        cin>>n;
+        string a;
+        string ans;
+        cin>>a;
+        for(int j=0; j<a.length(); j++){
+            if(a[j]=='E') ans+='S';
+            else ans+='E';
+        }
+        cout<<"Case #"<<i+1<<": "<<ans<<endl;
+    }
+}
